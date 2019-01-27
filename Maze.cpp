@@ -3,7 +3,7 @@
 #include <windows.h>
 #include <string>
 #include <fstream>
-#include <stdlib.h> 
+#include <stdlib.h>
 #include <time.h>
 using namespace std;
 class coor//coordinates, made for Animation function only
@@ -15,7 +15,7 @@ public:
 	coor(int a, int b, char h){ x = a, y = b, c = h; }
 	coor(){ x = 0; y = 0; c = ' '; }
 };
-void gotoxy(int x, int y)//given, move cursor to a location 
+void gotoxy(int x, int y)//given, move cursor to a location
 {
 	COORD pos = { x, y };
 	HANDLE output = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -62,7 +62,7 @@ class maze
 {
 public:
 	bool readMaze(string);//read maze from file
-	void displayMaze();//display maze on screen 
+	void displayMaze();//display maze on screen
 	void dyingAnimation(int);//display animation after maze is soved
 	int findExit();//the mouse will try to find exit
 	void moveMouse(char);//mouse move one coornate at a time
@@ -102,7 +102,7 @@ bool maze::readMaze(string fileName)//return true if map exist, false if not
 	}
 	return false;
 }
-void maze::displayMaze()//display maze on screen 
+void maze::displayMaze()//display maze on screen
 {
 	system("cls");
 	for (int i = 0; i < 30; i++)
@@ -233,7 +233,7 @@ void maze::dyingAnimation(int r)//display different animation depending on the r
 				break;
 		}
 	}
-	else//do the other one if mouse win 
+	else//do the other one if mouse win
 	{
 		coor arr[4];
 		for (int i = 0; i < 4; i++)
@@ -268,7 +268,7 @@ int main()
 {
 	maze m;
 	string s;
-	cout << "(enter either 'maze' or 'austin' as file name if you don't have one)\n";
+	cout << "(enter either 'example_maze1' or 'example_maze2' as file name if you don't have one)\n";
 	while (true)
 	{
 		cout << "enter file name(don't include .txt)\n";
